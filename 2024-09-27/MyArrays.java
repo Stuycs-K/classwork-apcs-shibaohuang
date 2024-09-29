@@ -17,8 +17,18 @@ public class MyArrays{
     }
     return copy;
   }
+
+  public static void main(String[] args){
+    int[] array = {1, 2, 3, 4};
+    int[] copy = returnCopy(array);
+    System.out.println("Arrays match and are different arrays: " + (arrayToString(array).equals(arrayToString(copy)) && (array != copy)));
   
-  public static void main(String[args]){
-    
+    array = new int[] {5, 5, 5, 5};
+    copy = returnCopy(array);
+    System.out.println("Arrays match and are different arrays: " + (arrayToString(array).equals(arrayToString(copy)) && (array != copy)));
+  
+    array = new int[] {};
+    copy = returnCopy(array);
+    System.out.println("Arrays match and are different arrays: " + (arrayToString(array).equals(arrayToString(copy)) && (array != copy)));
   }
 }
