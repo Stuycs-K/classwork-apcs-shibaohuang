@@ -56,5 +56,15 @@ public class MyArrays{
     array2 = new int[] {};
     concatenated = concatArray(array1, array2);
     System.out.println("Concatenated array matches expected result: " + arrayToString(concatenated).equals("[]"));
+
+    array1 = new int[] {6, 5};
+    array2 = new int[] {};
+    concatenated = concatArray(array1, array2);
+    System.out.println("Concatenated array matches expected result: " + arrayToString(concatenated).equals("[6, 5]"));
+
+    array1 = new int[] {};
+    array2 = new int[] {6, 5};
+    concatenated = concatArray(array1, array2);
+    System.out.println("Concatenated array matches expected result: " + arrayToString(concatenated).equals("[6, 5]"));
   }
 }
