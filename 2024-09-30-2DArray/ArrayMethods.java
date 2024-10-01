@@ -38,9 +38,24 @@ public class ArrayMethods {
         out += ary[i][j];
       }
     }
-
     return out;
   }
+
+  public static int[][] swapRC(int[][]nums){
+    if (nums.length == 0) {
+        return new int[0][0];
+    }
+    int rows = nums.length;
+    int columns = nums[0].length;
+    int[][] swapped = new int[columns][rows];
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
+            swapped[j][i] = nums[i][j];
+        }
+    }
+    return swapped;
+  }
+
 
   public static void main (String[] args) {
     // test arrayToString int[]
@@ -54,6 +69,13 @@ public class ArrayMethods {
       {2, 4, 0}
     }));
 
+    System.out.println(arrToString(new int[][] {
+      {2, 3, 4},
+      {5, 6, 7},
+      {2, 4, 0},
+      {3, 4, 7}
+    }));
+    
     System.out.println(arrToString(new int[][] {
       {},
       {5, 6, 7, -5, 5},
@@ -80,11 +102,31 @@ public class ArrayMethods {
     }));
 
     System.out.println(arr2DSum(new int[][] {
+      {2, 3, 4},
+      {5, 6, 7},
+      {2, 4, 0},
+      {3, 4, 7}
+    }));
+
+    System.out.println(arr2DSum(new int[][] {
       {},
       {},
       {}
     }));
 
+    // test swapRC int[][]
+    System.out.println(arrToString(swapRC(new int[][] {
+      {2, 3, 4},
+      {5, 6, 7},
+      {2, 4, 0}
+    })));
+
+    System.out.println(arrToString(swapRC(new int[][] {
+      {2, 3, 4},
+      {5, 6, 7},
+      {2, 4, 0},
+      {3, 4, 7}
+    })));
 
   }
 }
