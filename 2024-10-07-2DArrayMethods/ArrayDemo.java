@@ -95,6 +95,16 @@ public class ArrayDemo {
   }
 
   public static String htmlTable(int[][]nums){
-    return "";
-}
+    String html = "<table>";
+    for (int i = 0; i < nums.length; i++) {
+      html += "<tr>";
+      for (int j = 0; j < nums[i].length; j++) {
+        html += "<td>" + nums[i][j] + "</td>";
+        }
+        html += "</tr>";
+    }
+    html += "</table>";
+    return html;
+  }
+
 }
