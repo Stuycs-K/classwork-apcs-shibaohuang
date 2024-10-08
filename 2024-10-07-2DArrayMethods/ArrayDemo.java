@@ -2,10 +2,28 @@ import java.util.Arrays;
 public class ArrayDemo {
 
   public static void main(String[]args){
-    //write your tests here!
-    //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
-    //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
-    //do not use any other Arrays.method()
+    int[] notEmptyArray = {1, 2, 3, 4, 5};
+    System.out.println("1D Array Test");
+    System.out.println("arrToString: " + arrToString(notEmptyArray));
+    System.out.println("Arrays.toString: " + Arrays.toString(notEmptyArray));
+    System.out.println();
+        
+    int[] emptyArray = {};
+    System.out.println("Empty 1D Array Test");
+    System.out.println("arrToString: " + arrToString(emptyArray));
+    System.out.println("Arrays.toString: " + Arrays.toString(emptyArray));
+    System.out.println();
+        
+    int[][] notEmpty2DArray = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    System.out.println("2D Array Test");
+    System.out.println("arrToString: " + arrToString(notEmpty2DArray));
+    System.out.println("Arrays.deepToString: " + Arrays.deepToString(notEmpty2DArray));
+    System.out.println();
+        
+    int[][] empty2DArray = {};
+    System.out.println("Empty 2D Array Test");
+    System.out.println("arrToString: " + arrToString(empty2DArray));
+    System.out.println("Arrays.deepToString: " + Arrays.deepToString(empty2DArray));
   }
 
   public static String arrToString(int[] ary) {
@@ -69,6 +87,14 @@ public class ArrayDemo {
         }
       }
     }
+  }
+
+  public static int[] copy1D(int[] arr) {
+    int[] copy = new int[arr.length];
+    for (int i = 0; i < arr.length; i++) {
+        copy[i] = arr[i];
+    }
+    return copy;
   }
 
   public static int[][] copy(int[][] nums) {
