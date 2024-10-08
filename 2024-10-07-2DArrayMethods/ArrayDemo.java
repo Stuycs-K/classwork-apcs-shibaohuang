@@ -36,7 +36,15 @@ public class ArrayDemo {
   }
 
   public static int countZeros2D(int[][] nums){
-    return 0;
+    int count = 0;
+    for (int i = 0; i < nums.length; i++) {
+      for (int j = 0; j < nums[i].length; j++) {
+        if (nums[i][j] == 0) {
+          count++;
+        }
+      }
+    }
+    return count;
   }
 
   public static int arr2DSum(int[][] nums) {
@@ -88,8 +96,5 @@ public class ArrayDemo {
 
   public static String htmlTable(int[][]nums){
     return "";
-  }
-
-
-
+}
 }
