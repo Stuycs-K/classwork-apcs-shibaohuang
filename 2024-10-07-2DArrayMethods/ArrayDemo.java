@@ -24,6 +24,44 @@ public class ArrayDemo {
     System.out.println("Empty 2D Array Test");
     System.out.println("arrToString: " + arrToString(empty2DArray));
     System.out.println("Arrays.deepToString: " + Arrays.deepToString(empty2DArray));
+
+    int[][] nums1 = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+    };
+    System.out.println(htmlTable(nums1));
+
+    int[][] nums2 = {
+    {1, 2},
+    {3, 4, 5},
+    {6}
+    };
+    System.out.println(htmlTable(nums2));
+
+    int[][] nums3 = {};
+    System.out.println(htmlTable(nums3));
+
+    int[][] ary1 = {
+    {0, 1, 0},
+    {2, 0, 3},
+    {4, 5, 0}
+    };
+    System.out.println(countZeros2D(ary1));
+
+    int[][] ary2 = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+    };
+    System.out.println(countZeros2D(ary2));
+
+    int[][] ary3 = {
+    {0, 0, 0},
+    {0, 0, 0},
+    {0, 0, 0}
+    };
+    System.out.println(countZeros2D(ary3));
   }
 
   public static String arrToString(int[] ary) {
