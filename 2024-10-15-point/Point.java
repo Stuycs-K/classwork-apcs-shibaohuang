@@ -2,14 +2,14 @@ public class Point{
   private double x,y;
 
   public String toString(){
-    return "(" + x + "," + y + ")";
+    return "(" + x + ", " + y + ")";
   }
 
   //Initialize this Point to have the same values as the other Point.
   public Point(Point other){
     //COMPLETE THIS SECOND
-  double pointx = x;
-  double pointy = y;
+    this.x = other.x;
+    this.y = other.y;
   }
 
   //Initialize this Point to have the provided values
@@ -28,7 +28,7 @@ public class Point{
   Write this method FOURTH, go to the main and do that one first.
   */
   public double distanceTo(Point other){
-    return Math.sqrt( ((this.getX() - other.getX()) * (this.getX- other.getX())) +  ((this.getY() - other.getY()) * (this.getY() - other.getY()) ));
+    return Math.sqrt(((this.getX() - other.getX()) * (this.getX() - other.getX())) + ((this.getY() - other.getY()) * (this.getY() - other.getY())));
   }
 
   /*
