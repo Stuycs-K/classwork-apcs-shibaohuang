@@ -26,5 +26,21 @@ public class Demo{
     System.out.println(p6);
     System.out.println(Point.distance(p4, p5));
     System.out.println(p5.distanceTo(p6));
+
+    Point A = new Point(0, 0);
+    Point B = new Point(1, 0);
+    Point C = new Point(0.5, Math.sqrt(3) / 2);
+
+    System.out.println("Vertex A: " + A);
+    System.out.println("Vertex B: " + B);
+    System.out.println("Vertex C: " + C);
+
+    double sideAB = Point.distance(A, B);
+    double sideBC = Point.distance(B, C);
+    double sideCA = Point.distance(C, A);
+
+    System.out.println("Length of side AB: " + sideAB);
+    System.out.println("Length of side BC: " + sideBC);
+    System.out.println("Length of side CA: " + sideCA);
   }
 }
