@@ -10,13 +10,13 @@ public class ReadFile {
       File file = new File("ReadFile.java");//1
       Scanner input = new Scanner(file);
       //CODE THAT SCANS THE FILE.
-      int lineCount = 0;
       while (input.hasNextLine()) {
         String line = input.nextLine();
-        if (lineCount % 2 == 0) {
-          System.out.println(line);
+        for (int i = 0; i < line.length(); i++) {
+          if (line.charAt(i) == '{') {
+            System.out.println(line);
+          }
         }
-        lineCount++;
       }
       input.close();//releases the file from your program
 
