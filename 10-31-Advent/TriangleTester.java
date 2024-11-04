@@ -30,7 +30,7 @@ public class TriangleTester {
             File file = new File(filename);
             Scanner input = new Scanner(file);
             int[] sides = new int[3];
-            while (input.hasNextLine()) {
+            while (input.hasNextInt()) {
                 for (int i = 0; i < 3; i ++) {
                     if (input.hasNextInt()) {
                         sides[i] = input.nextInt();
@@ -47,11 +47,11 @@ public class TriangleTester {
         }
         return count;
     }
-    
+
     public static boolean isValidTriangle(int a, int b, int c) {
         return (a + b > c) && (a + c > b) && (b + c > a);
     }
-    
+
     public static void main(String[] args) {
         int validTrianglesCount = countTrianglesB("inputTri.txt");
         System.out.println(validTrianglesCount);
