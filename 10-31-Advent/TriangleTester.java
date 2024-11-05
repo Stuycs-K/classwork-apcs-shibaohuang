@@ -48,12 +48,35 @@ public class TriangleTester {
         return count;
     }
 
+    public static int countTrianglesC(String filename) {
+        int count = 0;
+        try {
+            File file = new File(filename);
+            Scanner input = new Scanner(file);
+            while (input.hasNextLine()) {
+                String line = input.nextLine();
+                String[] nums = line.split("x");
+                int a = Integer.parseInt(nums[0]);
+                int b = Integer.parseInt(nums[1]);
+                int c = Integer.parseInt(nums[2]);
+                if (isValidTriangle(a, b, c)) {
+                    count++;
+                }
+            }
+            input.close();
+        } 
+        catch (FileNotFoundException ex) {
+            System.out.println("File not found");
+        }
+        return count;
+    }
+
     public static boolean isValidTriangle(int a, int b, int c) {
         return (a + b > c) && (a + c > b) && (b + c > a);
     }
 
     public static void main(String[] args) {
-        int validTrianglesCount = countTrianglesB("inputTri.txt");
+        int validTrianglesCount = countTrianglesC("inputTri.txt");
         System.out.println(validTrianglesCount);
     }
 }
