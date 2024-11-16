@@ -30,15 +30,47 @@ public class ArrayListPractice {
     return newList;
   }
 
+  public static ArrayList<String> mixLists(ArrayList<String> a, ArrayList<String> b) {
+    ArrayList<String> mixedList = new ArrayList<String>(a.size() + b.size());
+    int i = 0;
+    while (i < a.size() && i < b.size()) {
+      mixedList.add(a.get(i));
+      mixedList.add(b.get(i));
+      i++;
+    }
+    while (i < a.size()) {
+      mixedList.add(a.get(i));
+      i++;
+    }
+    while (i < b.size()) {
+      mixedList.add(b.get(i));
+      i++;
+    }
+    return mixedList;
+  }
+
   public static void main(String[] args) {
     //System.out.println(createRandomArray(200000));
 
-    ArrayList<String> test1 = createRandomArray(200000);
+    ArrayList<String> test1 = createRandomArray(20);
     replaceEmpty(test1);
     System.out.println(test1);
 
     test1 = createRandomArray(10);
     System.out.println(test1);
     System.out.println(makeReversedList(test1));
+
+    ArrayList<String> list1 = new ArrayList<>();
+    list1.add("1");
+    list1.add("3");
+    list1.add("5");
+    ArrayList<String> list2 = new ArrayList<>();
+    list2.add("2");
+    list2.add("4");
+    list2.add("6");
+    list2.add("8");
+    list2.add("10");
+    ArrayList<String> test2 = mixLists(list1, list2);
+    System.out.println(test2);
   }
 }
