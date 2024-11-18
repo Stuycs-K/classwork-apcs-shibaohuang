@@ -29,15 +29,20 @@ public class TriangleTester {
         try {
             File file = new File(filename);
             Scanner input = new Scanner(file);
-            int[] sides = new int[3];
             while (input.hasNextInt()) {
-                for (int i = 0; i < 3; i ++) {
-                    if (input.hasNextInt()) {
-                        sides[i] = input.nextInt();
+                int[][] rows = new int[3][3];
+                for (int row = 0; row < 3; row++) {
+                    for (int col = 0; col < 3; col++) {
+                        rows[row][col] = input.nextInt();
                     }
                 }
-                if (isValidTriangle(sides[0], sides[1], sides[2])) {
-                    count++;
+                for (int col = 0; col < 3; col++) {
+                    int a = rows[0][col];
+                    int b = rows[1][col];
+                    int c = rows[2][col];
+                    if (isValidTriangle(a, b, c)) {
+                        count++;
+                    }
                 }
             }
             input.close();
@@ -76,7 +81,7 @@ public class TriangleTester {
     }
 
     public static void main(String[] args) {
-        int validTrianglesCount = countTrianglesC("inputTri.txt");
+        int validTrianglesCount = countTrianglesB("inputTri.txt");
         System.out.println(validTrianglesCount);
     }
 }
