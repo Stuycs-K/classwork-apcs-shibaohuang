@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class Part1 {
   public static String decipherMessage(String filename) {
-    String message = ""
+    String message = "";
     try {
       File file = new File(filename);
       Scanner input = new Scanner(file);
-      input.close()
+      input.close();
     }
     catch (FileNotFoundException ex) {
       System.out.println("File not found");
