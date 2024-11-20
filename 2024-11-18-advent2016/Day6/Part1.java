@@ -8,15 +8,17 @@ public class Part1 {
     try {
       File file = new File(filename);
       Scanner input = new Scanner(file);
-      input.close();
-    }
-    catch (FileNotFoundException ex) {
-      System.out.println("File not found");
-    }
-    return message;
-    }
-
+      String[] lines = new String[1000];
+      int rowCount = 0;
+      while (input.hasNextLine()) {
+        String line = input.nextLine();
+        if (!line.isEmpty()) {
+          lines[rowCount] = line;
+          rowCount++;
+        }
+      }
+            
     public static void main(String[] args) {
-      System.out.println(decipherMessage("inputSignal.txt"));
+        System.out.println(decipherMessage("inputSignal.txt"));
     }
-  }
+}
