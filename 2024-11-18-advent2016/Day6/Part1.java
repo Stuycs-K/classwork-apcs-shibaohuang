@@ -27,18 +27,24 @@ public class Part1 {
           char ch = lines[row].charAt(col);
           counts[ch - 'a']++;
         }
-                
-
-            input.close();
-        } catch (FileNotFoundException ex) {
-            System.out.println("File not found");
+        int maxCount = 0;
+        char mostFrequentChar = 'a';
+        for (int i = 0; i < 26; i++) {
+          if (counts[i] > maxCount) {
+            maxCount = counts[i];
+            mostFrequentChar = (char) (i + 'a');
+          }
         }
-
-        return message;
+        message += mostFrequentChar;
+      }
+      input.close();
     }
-
-            
-    public static void main(String[] args) {
-        System.out.println(decipherMessage("inputSignal.txt"));
+    catch (FileNotFoundException ex) {
+      System.out.println("File not found");
     }
+    return message;
+  }
+  public static void main(String[] args) {
+    System.out.println(decipherMessage("inputSignal.txt"));
+  }
 }
