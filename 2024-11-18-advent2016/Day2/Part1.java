@@ -26,13 +26,14 @@ public class Part1 {
       Scanner input = new Scanner(file);
       while (input.hasNextLine()) {
         String line = input.nextLine();
-        for (char move : line.toCharArray()) {
-          if (move == 'U' && x > 0) x--;
-          if (move == 'D' && x < 2) x++;
-          if (move == 'L' && y > 0) y--;
-          if (move == 'R' && y < 2) y++;
+        for (int i = 0; i < line.length(); i++) {
+          char move = line.charAt(i);
+          if (move == 'U' && x > 0 && keypad[x - 1][y] == 1) x--;
+          if (move == 'D' && x < 4 && keypad[x + 1][y] == 1) x++;
+          if (move == 'L' && y > 0 && keypad[x][y - 1] == 1) y--;
+          if (move == 'R' && y < 4 && keypad[x][y + 1] == 1) y++;
         }
-        code += keypad[x][y];
+        code += keypadChars[x][y];
       }
       input.close();
     }
