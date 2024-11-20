@@ -6,12 +6,14 @@ public class Part1 {
   public static String bathroomCode(String filename) {
     String code = "";
     int[][] keypad = {
-      {1, 2, 3},
-      {4, 5, 6},
-      {7, 8, 9}
+      {0, 1, 0, 0, 0},
+      {0, 0, 1, 1, 0},
+      {1, 1, 1, 1, 1},
+      {0, 1, 1, 1, 0},
+      {0, 0, 1, 0, 0}
     };
-    int x = 1;
-    int y = 1;
+    int x = 2;
+    int y = 0;
     try {
       File file = new File(filename);
       Scanner input = new Scanner(file);
