@@ -27,15 +27,15 @@ public class Part1 {
           char ch = lines[row].charAt(col);
           counts[ch - 'a']++;
         }
-        int maxCount = 0;
-        char mostFrequentChar = 'a';
+        int minCount = rowCount;
+        char leastFrequentChar = 'a';
         for (int i = 0; i < 26; i++) {
-          if (counts[i] > maxCount) {
-            maxCount = counts[i];
-            mostFrequentChar = (char) (i + 'a');
-          }
+          if (counts[i] > 0 && counts[i] < minCount) {
+            minCount = counts[i];
+            leastFrequentChar = (char) (i + 'a');
+            }
         }
-        message += mostFrequentChar;
+        message += leastFrequentChar;
       }
       input.close();
     }
