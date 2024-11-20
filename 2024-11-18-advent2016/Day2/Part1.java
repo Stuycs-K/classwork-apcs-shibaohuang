@@ -14,6 +14,13 @@ public class Part1 {
     };
     int x = 2;
     int y = 0;
+    char[][] keypadChars = {
+      {' ', '1', ' ', ' ', ' '},
+      {' ', '2', '3', '4', ' '},
+      {'5', '6', '7', '8', '9'},
+      {' ', 'A', 'B', 'C', ' '},
+      {' ', ' ', 'D', ' ', ' '}
+    };
     try {
       File file = new File(filename);
       Scanner input = new Scanner(file);
