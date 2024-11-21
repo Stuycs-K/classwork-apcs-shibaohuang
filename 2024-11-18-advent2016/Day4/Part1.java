@@ -22,6 +22,27 @@ public class Part1 {
             frequency[c - 'a']++;
           }
         }
+        String calculatedChecksum = "";
+        boolean[] used = new boolean[26];
+        for (int i = 0; i < 5; i++) { 
+          int maxFreq = -1;
+          char maxChar = ' ';
+          for (int j = 0; j < 26; j++) {
+            if (!used[j] && frequency[j] > maxFreq) {
+              maxFreq = frequency[j];
+              maxChar = (char) (j + 'a');
+            }
+            else if (!used[j] && frequency[j] == maxFreq) {
+              if (maxChar == ' ' || j + 'a' < maxChar) {
+                maxChar = (char) (j + 'a');
+              }
+            }
+          }
+          used[maxChar - 'a'] = true;
+          calculatedChecksum += maxChar;
+        }
+
+
       
 }
     catch (FileNotFoundException ex) {
