@@ -41,17 +41,19 @@ public class Part1 {
           used[maxChar - 'a'] = true;
           calculatedChecksum += maxChar;
         }
-
-
-      
-}
+        if (calculatedChecksum.equals(checksum)) {
+          sum += sectorID;
+        }
+      }
+      input.close();
+    }
     catch (FileNotFoundException ex) {
       System.out.println("File not found");
     }
     return String.valueOf(sum);
-    }
-
-    public static void main(String[] args) {
-      System.out.println(decipherMessage("inputIDs.txt"));
-    }
   }
+  
+  public static void main(String[] args) {
+    System.out.println(decipherMessage("inputIDs.txt"));
+  }
+}
