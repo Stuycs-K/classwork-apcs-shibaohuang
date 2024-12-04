@@ -1,5 +1,16 @@
 public class ColorDemo {
+  public static final String CLEAR_SCREEN = "\u001b[2J";
+  public static final String HIDE_CURSOR = "\u001b[?25l";
+  public static final String SHOW_CURSOR = "\u001b[?25h";
+  public static final String RESET = "\u001b[0m";
+
+  public static final int RED = 31;
+  public static final int GREEN = 32;
+  public static final int BLUE = 34;
+  
   public static void main(String[] args) {
+    
+    
     System.out.print("\u001b[33mYellow");
     System.out.print("\u001b[35mMagenta");
     for(int r = 0; r < 256; r+=32) {
