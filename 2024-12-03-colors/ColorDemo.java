@@ -9,8 +9,6 @@ public class ColorDemo {
   public static final int BLUE = 34;
   
   public static void main(String[] args) {
-    
-    
     System.out.print("\u001b[33mYellow");
     System.out.print("\u001b[35mMagenta");
     for(int r = 0; r < 256; r+=32) {
@@ -27,5 +25,16 @@ public class ColorDemo {
     System.out.print("\u001b[34mBlue");
     System.out.print(" \u001b[0mfish ");
     System.out.print("\u001b[0m");
+    
+    for (int i = 0; i < 5; i++) {
+      System.out.print(CLEAR_SCREEN);
+      System.out.print("\u001b[H");  // Move cursor to the top left
+      System.out.print("\u001b[" + RED + "mRed ");
+      System.out.print("\u001b[" + GREEN + "mGreen ");
+      System.out.print("\u001b[" + BLUE + "mBlue ");
+      System.out.print(RESET);
+    }
+    System.out.print(RESET);
+    System.out.print(SHOW_CURSOR);
   }
 }
