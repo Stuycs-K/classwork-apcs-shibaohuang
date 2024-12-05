@@ -3,11 +3,31 @@ import java.util.Random;
 
 public class Driver {
   public static int[] randomArray() {
-    Random rand = new Random();
     int[] array = new int[3];
-    for (int i = 0; i < 3; i++) {
-      array[i] = rand.nextInt(100);
+    for (int i = 0; i < array.length; i++) {
+      array[i] = (int) (Math.random() * 100);
     }
     return array;
+  }
+
+  public static void border() {
+    for (int i = 0; i < 80; i++) {
+      Text.go(1, i + 1);
+      Text.color(Text.RED, Text.BRIGHT);
+      System.out.print("$");
+    }
+    for (int i = 0; i < 80; i++) {
+      Text.go(30, i + 1);
+      Text.color(Text.RED, Text.BRIGHT);
+      System.out.print("$");
+    }
+    for (int i = 1; i < 30; i++) {
+      Text.go(i + 1, 1);
+      Text.color(Text.RED, Text.BRIGHT);
+      System.out.print("$");
+      Text.go(i + 1, 80);
+      Text.color(Text.RED, Text.BRIGHT);
+      System.out.print("$");
+    }
   }
 }
