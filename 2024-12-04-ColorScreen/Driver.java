@@ -64,6 +64,11 @@ public class Driver {
     }
   }
 
+  public static void star() {
+    Text.go(15, 40);
+    Text.color(Text.YELLOW, Text.BRIGHT);
+    System.out.print("*");
+  }
 
   public static void main(String[] args) {
     System.out.print(Text.CLEAR_SCREEN);
@@ -72,9 +77,13 @@ public class Driver {
     border();
 
     int[] array = randomArray();
-    //displayNumbers(array);
+    displayNumbers(array);
 
     separator();
+
+    star();
+
+    Text.go(31, 0);
 
     System.out.print(Text.RESET);
   }
