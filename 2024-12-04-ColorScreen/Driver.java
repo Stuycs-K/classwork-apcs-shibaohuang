@@ -44,12 +44,7 @@ public class Driver {
       else {
         Text.color(Text.WHITE);
       }
-      if (numbers[i] < 10) {
-        System.out.print("0" + numbers[i]);
-      }
-      else {
-        System.out.print(numbers[i]);
-      }
+      System.out.print(numbers[i]);
       if (i < numbers.length - 1) {
         Text.go(2, (i + 1) * spacing + 1);
       }
