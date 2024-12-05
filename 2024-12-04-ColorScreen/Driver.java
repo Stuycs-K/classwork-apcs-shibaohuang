@@ -56,6 +56,15 @@ public class Driver {
     }
   }
 
+  public static void separator() {
+    Text.go(3, 1);
+    Text.color(Text.RED, Text.BRIGHT);
+    for (int i = 0; i < 80; i++) {
+      System.out.print("-");
+    }
+  }
+
+
   public static void main(String[] args) {
     System.out.print(Text.CLEAR_SCREEN);
     System.out.print(Text.HIDE_CURSOR);
@@ -63,7 +72,9 @@ public class Driver {
     border();
 
     int[] array = randomArray();
-    displayNumbers(array);
+    //displayNumbers(array);
+
+    separator();
 
     System.out.print(Text.RESET);
   }
