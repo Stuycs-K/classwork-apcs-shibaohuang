@@ -42,5 +42,16 @@ public class Game {
       System.out.println("You won! " + player.getName() + " defeated " + enemy.getName() + ".");
       break;
     }
+
+    int enemyAction = random.nextInt(3);
+    if (enemyAction == 0) {
+      System.out.println(enemy.attack(player));
+    }
+    else if (enemyAction == 1) {
+      System.out.println(enemy.specialAttack(player));
+    } 
+    else if (enemyAction == 2) {
+      System.out.println(enemy.support());
+    }
   }
 }
