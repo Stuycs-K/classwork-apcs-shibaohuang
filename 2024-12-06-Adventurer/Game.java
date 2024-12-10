@@ -2,6 +2,11 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Game {
+  private static void printStatus(Adventurer player, Adventurer enemy) {
+    System.out.println(player.getName() + ", " + player.getHP() + "/" + player.getmaxHP() + " HP, " + player.getSpecial() + "/" + player.getSpecialMax() + " " + player.getSpecialName());
+    System.out.println(enemy.getName() + ", " + enemy.getHP() + "/" + enemy.getmaxHP() + " HP, " + enemy.getSpecial() + "/" + enemy.getSpecialMax() + " " + enemy.getSpecialName());
+  }
+
   public static void main(String[] args) {
     Scanner userInput = new Scanner(System.in);
     System.out.println("Enter username");
@@ -12,12 +17,11 @@ public class Game {
     Adventurer player = new CodeWarrior(userName, 30, "Java");
     Adventurer enemy = new Fairy("Flora", 50);
 
-    private static void printStatus(Adventurer player, Adventurer enemy) {
-      System.out.println(player.getName() + ", " + player.getHP() + "/" + player.getmaxHP() + " HP, " + player.getSpecial() + "/" + player.getSpecialMax() + " " + player.getSpecialName());
-      System.out.println(enemy.getName() + ", " + enemy.getHP() + "/" + enemy.getmaxHP() + " HP, " + enemy.getSpecial() + "/" + enemy.getSpecialMax() + " " + enemy.getSpecialName());
-    }
+    while (player.getHP() > 0 && enemy.getHP() > 0) {
+      printStatus(player, enemy);
+      System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
 
-    System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
+      
     if (userInput.equals("attack") || userInput.equals("a")) {
       attack(userName);
     }
@@ -34,5 +38,6 @@ public class Game {
     else {
       System.out.println("Please give a valid response.");
     }
+  }
   }
 }
