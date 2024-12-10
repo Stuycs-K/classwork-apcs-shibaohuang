@@ -36,6 +36,11 @@ public class Game {
       else {
         System.out.println("Please give a valid response.")
       }
-  }
+    }
+
+    if (enemy.getHP() <= 0) {
+      System.out.println("You won! " + player.getName() + " defeated " + enemy.getName() + ".");
+      break;
+    }
   }
 }
