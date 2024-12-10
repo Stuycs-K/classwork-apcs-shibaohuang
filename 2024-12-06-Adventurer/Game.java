@@ -36,7 +36,6 @@ public class Game {
       else {
         System.out.println("Please give a valid response.")
       }
-    }
 
     if (enemy.getHP() <= 0) {
       System.out.println("You won! " + player.getName() + " defeated " + enemy.getName() + ".");
@@ -53,5 +52,12 @@ public class Game {
     else if (enemyAction == 2) {
       System.out.println(enemy.support());
     }
+
+    if (player.getHP() <= 0) {
+      System.out.println("Game over! " + enemy.getName() + " defeated " + player.getName() + ".");
+      break;
+    }
+  }
+  userInput.close();
   }
 }
