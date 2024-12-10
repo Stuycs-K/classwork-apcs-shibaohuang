@@ -20,24 +20,22 @@ public class Game {
     while (player.getHP() > 0 && enemy.getHP() > 0) {
       printStatus(player, enemy);
       System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
-
-      
-    if (userInput.equals("attack") || userInput.equals("a")) {
-      attack(userName);
-    }
-    if (userInput.equals("special") || userInput.equals("sp")) {
-      specialAttack(userName);
-    }
-    if (userInput.equals("support") || userInput.equals("su")) {
-      support(userName);
-    }
-    if (userInput.equals("quit")) {
-      System.out.println("You have quit the program");
-
-    }
-    else {
-      System.out.println("Please give a valid response.");
-    }
+      if (userName.equals("attack") || userName.equals("a")) {
+        System.out.printl(player.attack(enemy));
+      }
+      else if (userName.equals("special") || userName.equals("sp")) {
+        System.out.printl(player.specialAttack(enemy));
+      }
+      else if (userName.equals("support") || userName.equals("su")) {
+        System.out.printl(player.support());
+      }
+      else if (userName.equals("quit")) {
+        System.out.println("You have quit the game.");
+        break;
+      }
+      else {
+        System.out.println("Please give a valid response.")
+      }
   }
   }
 }
