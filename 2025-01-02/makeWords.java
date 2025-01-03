@@ -5,7 +5,9 @@ public class makeWords {
     }
     else {
       for (int i = 0; i < remainingLetters; i++) {
-        
+        System.out.println()
+        remainingLetters--;
+
       }
     }
   }
